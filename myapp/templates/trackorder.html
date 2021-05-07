@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Menlygroom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+     <!-- add icon link -->
+    <link rel = "icon" href = 
+"https://img.icons8.com/color/48/000000/medium-logo.png" 
+        type = "image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css'%}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+ {% block add %}
+    <link rel="stylesheet" href="{% static 'css/trackorder.css'%}">
+   
+    {% endblock %}
+
+
+  </head>
+  <body class="goto-here">
+		<div class="py-1 bg-black">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+	    		<div class="col-lg-12 d-block">
+		    		<div class="row d-flex">
+		    			<div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">8200324594</span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">menlygroom@gmail.com</span>
+					    </div>
+					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'index' %}">Menlygroom</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'index'%}" class="nav-link">Home</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="/shop/3">Shaving</a>
+                <a class="dropdown-item" href="{% url 'productsingle'%}">Single Product</a>
+                <a class="dropdown-item" href="{% url 'cart'%}">Cart</a>
+                <a class="dropdown-item" href="{% url 'checkout'%}">Checkout</a>
+              </div>
+            </li>
+	          <li class="nav-item active"><a href="{% url 'about'%}" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="{% url 'blog'%}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'contact'%}" class="nav-link">Contact</a></li>
+
+            {% if request.session.user %} 
+			 <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+			 {% else %}
+			 <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+			  <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+			  {% endif %}
+        
+	          <li class="nav-item cta cta-colored"><a href="{% url 'cart'%}" class="nav-link"><span class="icon-shopping_cart"></span>{{count}}</a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+
+
+
+
+
+<div class="container mainclass">
+    <article class="card">
+        <header class="card-header"> My Orders / Tracking </header>
+        <div class="card-body">
+            <h6>Order ID: OD45345345435</h6>
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 APRIL 2021 </div>
+                    <div class="col"> <strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i> +1598675986 </div>
+                    <div class="col"> <strong>Status:</strong> <br> Picked by the courier </div>
+                    <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+                </div>
+            </article>
+            <div class="track">
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+            </div>
+            <hr>
+            <ul class="row">
+                {% for o in order_data %}
+                <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">{{o.product_name}} <span class="text-muted">₹950 </span>
+                        </figcaption>
+                        <div>
+                            <img src="{{o.image.url}}" style="height: 50px; width: 50px;">
+                        </div>
+                    </figure>
+                </li>
+                {% endfor %}
+               <!--  <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title">Trimmer</p> <span class="text-muted">₹850 </span>
+                        </figcaption>
+                    </figure>
+                </li> -->
+                
+                </li>
+            </ul>
+            <hr>
+            <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+        </div>
+    </article>
+</div>
