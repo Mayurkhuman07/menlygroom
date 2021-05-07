@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's$3*1p8ho&o7vg93(qm*r38!!54418uj&y4ntcr-lq0d5iap@@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://mayurkhuman07.github.io/menlygroom/']
 # Application definition
